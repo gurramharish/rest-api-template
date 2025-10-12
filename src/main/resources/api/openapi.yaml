@@ -7,7 +7,9 @@ info:
   version: 1.0.0
   contact:
     name: API Support
-    email: support@example.com
+    email:
+          x-constraints: |
+            @jakarta.validation.constraints.Email(message = "must be a valid email address" support@example.com
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
@@ -184,6 +186,8 @@ components:
           description: The employee's last name
           example: Doe
         email:
+          x-constraints: |
+            @jakarta.validation.constraints.Email(message = "must be a valid email address"
           type: string
           format: email
           description: The employee's email address
@@ -223,6 +227,8 @@ components:
           description: The employee's last name
           example: Doe
         email:
+          x-constraints: |
+            @jakarta.validation.constraints.Email(message = "must be a valid email address"
           type: string
           format: email
           description: The employee's email address
