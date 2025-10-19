@@ -11,15 +11,16 @@ import org.mapstruct.factory.Mappers;
 @Mapper(componentModel = "spring")
 public interface EmployeeMapper {
 
-    EmployeeMapper INSTANCE = Mappers.getMapper(EmployeeMapper.class);
+	EmployeeMapper INSTANCE = Mappers.getMapper(EmployeeMapper.class);
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "version", ignore = true)
-    Employee toEntity(EmployeeRequest employeeRequest);
+	@Mapping(target = "id", ignore = true)
+	@Mapping(target = "version", ignore = true)
+	Employee toEntity(EmployeeRequest employeeRequest);
 
-    EmployeeResponse toResponse(Employee employee);
+	EmployeeResponse toResponse(Employee employee);
 
-    @Mapping(target = "id", ignore = true)
-    @Mapping(target = "version", ignore = true)
-    void updateEntity(EmployeeRequest employeeRequest, @MappingTarget Employee employee);
+	@Mapping(target = "id", ignore = true)
+	@Mapping(target = "version", ignore = true)
+	void updateEntity(EmployeeRequest employeeRequest, @MappingTarget Employee employee);
+
 }
